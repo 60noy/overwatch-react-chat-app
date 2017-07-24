@@ -1,0 +1,4 @@
+.container{
+  background: #000;
+  background-image: url(`${process.env.PUBLIC_URL}/images/bg.jpg);
+}

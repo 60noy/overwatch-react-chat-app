@@ -6,6 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import { withRouter } from 'react-router-dom'
 
 import { heroesNames } from '../../utils/heroes'
+import styles from './styles.css'
 
 const heroes = heroesNames.map(hero => hero[0] + hero.substring(1, hero.length).toLowerCase())
 
@@ -31,7 +32,7 @@ class ChoosePlayer extends Component {
   }
   render() {
     return (
-      <div>
+      <div className={styles.container}>
         <AutoComplete
           hintText="Type your hero"
           dataSource={heroes}

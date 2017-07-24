@@ -13,31 +13,16 @@ const styles = {
     marginRight: '10%',
     height: '100%',
   },
-  messagesAndUsersList: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  messages: {
-    width: '100%',
-
-  },
-  usersList: {
-    width: '15%',
-  },
 }
 
-const Chat = ({ onSendMessage, messages, users }) => (
+const Chat = ({ onSendMessage, messages }) => (
   <div style={styles.container}>
     <Paper zDepth={3}>
       <div style={styles.messagesAndUsersList} >
         <div style={styles.messages}>
           <UserMessagesList messages={messages} />
         </div>
-        <div style={styles.usersList}>
-          <UsersList users={users} />
-        </div>
+        <div style={styles.usersList} />
       </div>
       <SendMessageSection onSendMessage={onSendMessage} />
     </Paper>
@@ -52,10 +37,6 @@ Chat.propTypes = {
       name: PropTypes.string.isRequired,
       hero: PropTypes.string.isRequired,
     }).isRequired,
-  })).isRequired,
-  users: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    hero: PropTypes.string.isRequired,
   })).isRequired,
 }
 export default Chat
