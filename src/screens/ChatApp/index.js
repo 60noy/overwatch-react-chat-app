@@ -1,3 +1,3 @@
-import ChatApp from './ChatApp';
+import ChatApp from './ChatApp'
 
-export default ChatApp;
+export default ChatApp

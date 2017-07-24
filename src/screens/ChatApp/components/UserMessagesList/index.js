@@ -1,3 +1,3 @@
-import UserMessagesList from './UserMessagesList';
+import UserMessagesList from './UserMessagesList'
 
-export default UserMessagesList;
+export default UserMessagesList

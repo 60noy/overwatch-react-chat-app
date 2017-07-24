@@ -6,6 +6,7 @@ export const heroesNames = [
   'DVA',
   'GENJI',
   'HANZO',
+  'DOOMFIST',
   'JUNKRAT',
   'LUCIO',
   'MCCREE',

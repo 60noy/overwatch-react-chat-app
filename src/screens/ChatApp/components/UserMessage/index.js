@@ -1,3 +1,3 @@
-import UserMessage from './UserMessage';
+import UserMessage from './UserMessage'
 
-export default UserMessage;
+export default UserMessage

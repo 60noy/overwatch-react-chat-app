@@ -5,7 +5,7 @@ import SendIcon from 'material-ui/svg-icons/content/send'
 
 const SendMessageButton = ({ onClick }) => (
   <RaisedButton
-    secondary
+    primary
     label="send"
     icon={<SendIcon />}
     onTouchTap={onClick}

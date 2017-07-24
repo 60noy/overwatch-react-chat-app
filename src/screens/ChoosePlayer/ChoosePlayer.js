@@ -11,6 +11,10 @@ import styles from './styles.css'
 const heroes = heroesNames.map(hero => hero[0] + hero.substring(1, hero.length).toLowerCase())
 
 
+const textFieldStyle = {
+  color: '#fff',
+}
+
 class ChoosePlayer extends Component {
   constructor(props) {
     super(props)
@@ -33,22 +37,36 @@ class ChoosePlayer extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <AutoComplete
-          hintText="Type your hero"
-          dataSource={heroes}
-          onNewRequest={this.handleHeroInputUpdate}
-          filter={AutoComplete.caseInsensitiveFilter}
-        />
-        <TextField
-          hintText="enter your name"
-          onChange={e => this.setState({ name: e.target.value })}
-        />
-        <RaisedButton
-          label="next"
-          primary
-          onClick={this.onNextButtonClick}
-          disabled={!this.state.name || !this.state.hero}
-        />
+        <div className={styles.centeredBox}>
+          <div className={styles.title} >Choose your hero</div>
+          <AutoComplete
+            hintText="Type your hero"
+            dataSource={heroes}
+            onNewRequest={this.handleHeroInputUpdate}
+            filter={AutoComplete.caseInsensitiveFilter}
+            style={{ marginRight: 5 }}
+            textColor="#fff"
+            hintColor="#fff"
+            inputStyle={textFieldStyle}
+            hintStyle={textFieldStyle}
+          />
+          <TextField
+            hintText="enter your name"
+            hintStyle={{ color: '#EEEEEE' }}
+            inputStyle={textFieldStyle}
+            onChange={e => this.setState({ name: e.target.value,
+            })}
+          />
+          <div>
+            <RaisedButton
+              label="next"
+              primary
+              onClick={this.onNextButtonClick}
+              disabled={!this.state.name || !this.state.hero}
+              style={{ marginTop: '5%' }}
+            />
+          </div>
+        </div>
       </div>
     )
   }

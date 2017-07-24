@@ -1,3 +1,3 @@
-import SendMessageSection from './SendMessageSection';
+import SendMessageSection from './SendMessageSection'
 
-export default SendMessageSection;
+export default SendMessageSection

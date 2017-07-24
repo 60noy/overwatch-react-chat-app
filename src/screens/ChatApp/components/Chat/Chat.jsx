@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Paper from 'material-ui/Paper'
 import SendMessageSection from '../SendMessageSection'
 import UserMessagesList from '../UserMessagesList'
-import UsersList from '../UsersList'
 
 const styles = {
   container: {

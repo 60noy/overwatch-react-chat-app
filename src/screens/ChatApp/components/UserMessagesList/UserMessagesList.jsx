@@ -21,7 +21,7 @@ class UserMessagesList extends Component {
     const { messages } = this.props
     return (
       <div
-        style={{ overflowY: 'scroll', height: '400px' }}
+        style={{ overflowY: 'scroll', height: '600px' }}
         ref={(div) => { this.messageList = div }}
       >
         {messages.map(message =>
