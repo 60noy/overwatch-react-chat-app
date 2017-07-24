@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import moment from 'moment'
 import database from '../../../../helpers/database'
 import Chat from './components/Chat'
 
@@ -10,20 +11,22 @@ class ChatMessagesSection extends Component {
     super(props)
     this.state = {
       messages: [],
-      user: {
-        name: this.props.name,
-        hero: this.props.hero,
-      },
       userRef: '',
+      user: {
+        hero: this.props.hero,
+        name: this.props.name,
+      },
     }
   }
+
   componentWillMount() {
-    // listen to added messages and add them to state
     messagesRef.on('child_added', (newMessage) => {
       const message = newMessage.val()
       this.addMessageToState(message)
     })
   }
+
+    // listen to added messages and add them to state
   // add message to the messages in the state
   addMessageToState = (message) => {
     const { messages } = this.state
@@ -36,6 +39,7 @@ class ChatMessagesSection extends Component {
     const message = {
       user,
       text,
+      date: moment().format(),
     }
     // send the new message to server
     const newMessageRef = messagesRef.push()
@@ -43,6 +47,7 @@ class ChatMessagesSection extends Component {
       ...message,
     })
   }
+
   render() {
     const { messages, users } = this.state
     return (

@@ -16,8 +16,6 @@ const HeroAutocompleteField = ({ onHeroChoose }) => (
     onNewRequest={onHeroChoose}
     filter={AutoComplete.caseInsensitiveFilter}
     style={{ marginRight: 5 }}
-    textColor="#fff"
-    hintColor="#fff"
     inputStyle={textFieldStyle}
     hintStyle={textFieldStyle}
   />
