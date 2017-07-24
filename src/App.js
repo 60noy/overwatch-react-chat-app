@@ -14,8 +14,8 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={ChoosePlayer} />
-          <Route path="/chat" render={props => <ChatApp {...props} />} />
+          <Route exact path="/login" component={ChoosePlayer} />
+          <Route exact path="/" render={props => <ChatApp {...props} />} />
         </Switch>
       </BrowserRouter>
     )

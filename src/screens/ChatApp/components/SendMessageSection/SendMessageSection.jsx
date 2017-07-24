@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
-import SendMessageButton from '../SendMessageButton'
+import SendIcon from 'material-ui/svg-icons/content/send'
 
 const styles = {
   container: {
@@ -60,7 +61,13 @@ class SendMessageSection extends Component {
           />
         </div>
         <div style={styles.sendMessageButton}>
-          <SendMessageButton onClick={this.handleSendButtonClick} />
+          <RaisedButton
+            primary
+            label="send"
+            icon={<SendIcon />}
+            onTouchTap={() => this.handleSendButtonClick}
+            fullWidth
+          />
         </div>
       </div>
     )

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Paper from 'material-ui/Paper'
-import SendMessageSection from '../SendMessageSection'
-import UserMessagesList from '../UserMessagesList'
+import SendMessageSection from '../../../components/SendMessageSection'
+import UserMessagesList from '../../../components/UserMessagesList'
 
 const styles = {
   container: {
@@ -12,17 +12,19 @@ const styles = {
     marginRight: '10%',
     height: '100%',
   },
+  messages: {
+    width: '100%',
+
+  },
+  usersList: {
+    width: '15%',
+  },
 }
 
 const Chat = ({ onSendMessage, messages }) => (
   <div style={styles.container}>
     <Paper zDepth={3}>
-      <div style={styles.messagesAndUsersList} >
-        <div style={styles.messages}>
-          <UserMessagesList messages={messages} />
-        </div>
-        <div style={styles.usersList} />
-      </div>
+      <UserMessagesList messages={messages} />
       <SendMessageSection onSendMessage={onSendMessage} />
     </Paper>
   </div>
