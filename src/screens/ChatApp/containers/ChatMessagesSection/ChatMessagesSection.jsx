@@ -1,6 +1,5 @@
-/* eslint-disable no-debugger */
 import React, { Component } from 'react'
-// import randomcolor from 'randomcolor'
+import PropTypes from 'prop-types'
 import database from '../../../../helpers/database'
 import Chat from './components/Chat'
 
@@ -12,10 +11,8 @@ class ChatMessagesSection extends Component {
     this.state = {
       messages: [],
       user: {
-        name: 'noy', // eslint-disable-line react/prop-types
-        // name: this.props.location.state.name, // eslint-disable-line react/prop-types
-        // hero: this.props.location.state.hero, // eslint-disable-line react/prop-types
-        hero: 'GENJI', // eslint-disable-line react/prop-types
+        name: this.props.name,
+        hero: this.props.hero,
       },
       userRef: '',
     }
@@ -58,4 +55,8 @@ class ChatMessagesSection extends Component {
   }
 }
 
+ChatMessagesSection.propTypes = {
+  hero: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+}
 export default ChatMessagesSection

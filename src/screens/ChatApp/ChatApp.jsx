@@ -1,28 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import UpperAppBar from './containers/UppperAppBar'
-import Title from '../../components/Title'
 import ChatMessagesSection from './containers/ChatMessagesSection'
+import styles from './styles.css'
 
-class Chat extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-  // shows modal with choose hero box
-  showChooseHeroModal = () => {
-
-  }
-  render() {
-    return (
-      <div>
-        <UpperAppBar onChangeHero={() => this.showChooseHeroModal} />
-        <Title name="Chat" />
-        <ChatMessagesSection />
-      </div>
+const ChatApp = ({ location }) => ( //eslint-disable-line
+  <div className={styles.container}>
+    <UpperAppBar />
+    <ChatMessagesSection {...location.state} />
+  </div>
     )
-  }
-}
 
-export default Chat
+export default ChatApp

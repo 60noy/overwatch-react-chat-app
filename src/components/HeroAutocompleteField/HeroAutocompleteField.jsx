@@ -1,7 +1,7 @@
 import React from 'react'
 import AutoComplete from 'material-ui/AutoComplete'
 import PropTypes from 'prop-types'
-import { heroesNames } from '../../../../utils/heroes'
+import { heroesNames } from '../../utils/heroes'
 
 const heroes = heroesNames.map(hero => hero[0] + hero.substring(1, hero.length).toLowerCase())
 

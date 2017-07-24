@@ -65,7 +65,7 @@ class SendMessageSection extends Component {
             primary
             label="send"
             icon={<SendIcon />}
-            onTouchTap={() => this.handleSendButtonClick}
+            onTouchTap={this.handleSendButtonClick}
             fullWidth
           />
         </div>
